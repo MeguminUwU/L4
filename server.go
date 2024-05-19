@@ -1,20 +1,20 @@
 package main
 
 import (
-    "context"
-    "fmt"
-    "log"
-    "math/rand"
-    "net"
-    "os"
-    "strconv"
-    "sync"
-    "bufio"
+	"bufio"
+	"context"
+	"fmt"
+	"log"
+	"math/rand"
+	"net"
+	"os"
+	"strconv"
+	"sync"
 
-    pb "L4/proto" // Importa el paquete generado
+	pb "L4/proto" // Importa el paquete generado
 
-    "google.golang.org/grpc"
-    "google.golang.org/grpc/reflection"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 // Server es el servidor gRPC
@@ -209,7 +209,7 @@ func (s *Server) processRequests(stage int) {
 
 func main() {
     // IP y puerto específicos
-    address := "localhost:50052"
+    address := "0.0.0.0:50052"
 
     lis, err := net.Listen("tcp", address)
     if err != nil {
