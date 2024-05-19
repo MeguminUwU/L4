@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = ".";
+
+service MercService {
+    rpc MyMethod(MercRequestMessage) returns (MercResponseMessage);
+}
+
+message MercRequestMessage {
+    string ID = 1;
+    string accion = 2;
+}
+
+message MercResponseMessage {
+    string informacion = 1;
+}
